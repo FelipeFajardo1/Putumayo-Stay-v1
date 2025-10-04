@@ -1,0 +1,12 @@
+// CONFIGURACIÓN DE LA CONEXIÓN A LA BASE DE DATOS
+
+import { Sequelize } from 'sequelize';
+
+// CREA UNA INSTANCIA DE SEQUELIZE PARA CONECTARSE A LA BASE DE DATOS 'reservas'
+// UTILIZANDO EL USUARIO 'root' Y UNA CONTRASEÑA VACÍA
+const db = new Sequelize('reservas', 'root', '', {
+    host: 'localhost', // ESPECIFICA EL HOST DE LA BASE DE DATOS
+    dialect: 'mysql'   // ESPECIFICA EL TIPO DE BASE DE DATOS QUE SE ESTÁ UTILIZANDO (MySQL)
+});
+
+export default db; // EXPORTA LA INSTANCIA DE SEQUELIZE PARA SER UTILIZADA EN OTROS ARCHIVOS
