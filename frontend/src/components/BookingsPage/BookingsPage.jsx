@@ -32,7 +32,7 @@ const BookingsPage = () => {
             setUserId(storedUserId);
             setProfileImage(storedProfileImage);
         }
-
+        console.log(token);
         // Fetch: Obtiene las reservas del usuario desde el servidor
         fetch(`http://localhost:8000/bookings?userId=${storedUserId}`, {
             headers: {
