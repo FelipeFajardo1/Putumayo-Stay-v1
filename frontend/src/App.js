@@ -1,25 +1,24 @@
-import React from 'react';
-import LoginForm from './components/LRForm/LoginForm';
-import RegisterForm from './components/LRForm/RegisterForm';
-import MainPage from './components/mainPage/mainPage.jsx';
-import EditForm from './components/EditForm/EditForm.jsx';
-import BookingsPage from './components/BookingsPage/BookingsPage.jsx';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-const App = () => {
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import StartPage from "./common/StartPage/StartPage.jsx";
+import HomePage from "./common/Home/HomePage.jsx";
+import DashboardPage from "./common/DashboardPage/DashboardPage.jsx";
+import RoomPage from "./common/RoomPage/RoomPage.jsx";
+import ReviewPage from "./common/ReviewPage/ReviewPage.jsx";
+function App() {
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<MainPage/>}/>
-          <Route path='/register' element={<RegisterForm />}/>
-          <Route path='/login' element={<LoginForm />}/>
-          <Route path="/edit/:id" element={<EditForm />}/>
-          <Route path="/bookings" element={<BookingsPage/>}/>
+          <Route path="/" element={<StartPage />}></Route>
+          <Route path="/home" element={<HomePage />}></Route>
+          <Route path="/dashboard" element={<DashboardPage/>}></Route>
+          <Route path="*" element={<StartPage />}></Route>
+          <Route path="/rooms" element={<RoomPage/>}></Route>
+          <Route path="/reviews" element={<ReviewPage/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
   );
-};
-
+}
 export default App;
